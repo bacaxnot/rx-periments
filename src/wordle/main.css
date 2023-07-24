@@ -1,0 +1,77 @@
+:root {
+  font-size: 62.5%;
+  --box-size: 64px;
+  --box-bradius: 16px;
+  --box-gap: 6px;
+  --green: rgb(123 169 45);
+  --yellow: rgb(245 198 40);
+}
+#app {
+  display: grid;
+  gap: calc(3 * var(--box-gap));
+  justify-content: center;
+  align-content: center;
+}
+.letters-container {
+  display: grid;
+  gap: var(--box-gap);
+}
+.letter-row {
+  display: flex;
+  gap: var(--box-gap);
+}
+.letter {
+  --border-color: white;
+  --bg-color: inherit;
+
+  display: grid;
+  justify-content: center;
+  align-items: center;
+
+  width: var(--box-size);
+  height: var(--box-size);
+
+  font-size: 3.4rem;
+  font-weight: bold;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-color);
+  border-radius: var(--box-bradius);
+}
+.letter.typed {
+  --border-color: gray;
+}
+.letter.correct {
+  --border-color: var(--green);
+  --bg-color: var(--green);
+}
+.letter.wrong {
+  --border-color: var(--yellow);
+  --bg-color: var(--yellow);
+}
+.restart-btn {
+  --bg-color: inherit;
+  --border-color: white;
+  --text-color: white;
+
+  border: 1px solid gray;
+  padding: 1rem;
+  border-radius: var(--box-bradius);
+  font-size: 1.8rem;
+  font-weight: bold;
+
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+}
+.restart-btn[disabled] {
+  --text-color: grey;
+  --border-color: grey;
+  --bg-color: inherit;
+}
+.restart-btn:not(:disabled):hover {
+  --bg-color: white;
+  --text-color: black;
+}
+.restart-btn:hover {
+  cursor: pointer;
+}
